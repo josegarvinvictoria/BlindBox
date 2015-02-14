@@ -1,0 +1,43 @@
+<section data-ng-controller="ContrasenyesController">
+    <div class="page-header">
+        <h1>Crear una nova contrasenya:</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="nomservei">Nom del servei:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="nomservei" id="nomservei" class="form-control" placeholder="Facebook, Twitter, Google" required>
+                    </div>
+                    
+                    <label class="control-label" for="url">URL:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="url" id="url" class="form-control" placeholder="http://exemple.com" required>
+                    </div>
+                    
+                    <label class="control-label" for="nomusuari">Nom d'usuari:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="nomusuari" id="nomusuari" class="form-control" placeholder="Nom d'usuari" required>
+                    </div>
+                    
+                    <label class="control-label" for="contrasenya">Contrasenya:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="contrasenya" id="contrasenya" class="form-control" placeholder="Contrasenya" required>
+                    </div>
+                    
+                    <label class="control-label" for="observacions">Observacions:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="observacions" id="observacions" class="form-control" placeholder="Observacions (Opcional)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

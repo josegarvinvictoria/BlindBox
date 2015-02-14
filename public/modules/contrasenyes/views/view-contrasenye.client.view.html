@@ -1,0 +1,23 @@
+<section data-ng-controller="ContrasenyesController" data-ng-init="findOne()">
+	<div class="page-header">
+	    <h1 data-ng-bind="contrasenye.nomservei"></h1>
+		<span>Nom d'usuari: </span><span data-ng-bind="contrasenye.nomusuari"></span></br>
+		<span>Contrasenya: </span><span data-ng-bind="contrasenye.contrasenya"></span>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == contrasenye.user._id))">
+		<a class="btn btn-primary" href="/#!/contrasenyes/{{contrasenye._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="contrasenye.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="contrasenye.user.displayName"></span>
+		</em>
+	</small>
+</section>

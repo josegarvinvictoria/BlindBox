@@ -1,0 +1,23 @@
+<section data-ng-controller="ContrasenyesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Llistat de contrasenyes:</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="contrasenye in contrasenyes" data-ng-href="#!/contrasenyes/{{contrasenye._id}}" class="list-group-item">
+			
+			<h4 class="list-group-item-heading" data-ng-bind="contrasenye.nomservei"></h4>
+            Nom d'usuari:<h5 class="list-group-item-heading" data-ng-bind="contrasenye.nomusuari"></h5>
+      
+       
+       <small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="contrasenye.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="contrasenye.user.displayName"></span>
+			</small>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!contrasenyes.$resolved || contrasenyes.length">
+    	Actualment no hi ha cap contrasenya desada. <a href="/#!/contrasenyes/create">En vols crear una de nova</a>?
+    </div>
+</section>
