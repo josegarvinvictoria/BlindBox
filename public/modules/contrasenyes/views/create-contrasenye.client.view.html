@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
-                <div class="form-group">
+                <div class="form-group col-md-4">
                     <label class="control-label" for="nomservei">Nom del servei:</label>
                     <div class="controls">
                         <input type="text" data-ng-model="nomservei" id="nomservei" class="form-control" placeholder="Facebook, Twitter, Google" required>
@@ -30,10 +30,30 @@
                     <div class="controls">
                         <input type="text" data-ng-model="observacions" id="observacions" class="form-control" placeholder="Observacions (Opcional)">
                     </div>
-                </div>
-                <div class="form-group">
+                    <br>
                     <input type="submit" class="btn btn-default">
                 </div>
+                <div class="col-md-8">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nom (Servei)</th>
+                            <th>URL</th>
+                            <th>Nom d'usuari</th>
+                            <th>Contrasenya</th>
+                            <th>Observacions</th>
+                        </tr>
+                        <tbody>
+                           <a data-ng-repeat="contrasenye in contrasenyes" >
+                            <tr>
+                                <td data-ng-bind="contrasenye.nomservei"></td>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
+                </div>
+
+
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
 				</div>
