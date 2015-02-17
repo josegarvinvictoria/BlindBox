@@ -1,4 +1,5 @@
 .DS_Store
+.nodemonignore
 .sass-cache/
 npm-debug.log
 app/tests/coverage/
