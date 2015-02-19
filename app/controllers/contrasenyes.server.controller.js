@@ -73,7 +73,12 @@ exports.delete = function(req, res) {
  * List of Contrasenyes
  */
 exports.list = function(req, res) { 
-	Contrasenye.find().sort('-created').populate('user', 'displayName').exec(function(err, contrasenyes) {
+    var currentUser = req.session.passport.user;
+
+
+
+	Contrasenye.find({user : currentUser}).sort('-created').populate('user', 'displayName').exec(function(err, contrasenyes) {
+
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
