@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                     <label class="control-label" for="nomservei">Nom del servei:</label>
                     <div class="controls">
                         <input type="text" data-ng-model="nomservei" id="nomservei" class="form-control" placeholder="Facebook, Twitter, Google" required>
@@ -33,7 +33,7 @@
                     <br>
                     <input type="submit" class="btn btn-default">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-offset-1 col-md-8">
                 <table class="table table-hover table-bordered">
 
                     <thead>
@@ -45,11 +45,11 @@
                             <th>Observacions</th>
                         </tr>
                         <tr data-ng-repeat="contrasenye in contrasenyes">
-                           <td data-ng-bind="contrasenye.nomservei">{{contrasenye.nomservei.displayName}}</td>
-                           <td data-ng-bind="contrasenye.url">{{contrasenye.url.displayName}}</td>
-                           <td data-ng-bind="contrasenye.user.displayName">{{contrasenye.user.displayName}}</td>
-                           <td data-ng-bind="contrasenye.contrasenya">{{contrasenye.contrasenya.displayName}}</td>
-                           <td data-ng-bind="contrasenye.observacions">{{contrasenye.observacions.displayName}}</td>
+                           <td data-ng-bind="contrasenye.nomservei">{{contrasenye.nomservei}}</td>
+                           <td data-ng-bind="contrasenye.url">{{contrasenye.url}}</td>
+                           <td data-ng-bind="contrasenye.nomusuari">{{contrasenye.nomusuari}}</td>
+                           <td data-ng-bind="contrasenye.contrasenya">{{contrasenye.contrasenya}}</td>
+                           <td data-ng-bind="contrasenye.observacions">{{contrasenye.observacions}}</td>
                         </tr>
                     </thead>
 
