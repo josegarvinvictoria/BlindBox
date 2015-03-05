@@ -39,10 +39,9 @@
     <link rel="stylesheet" href="{{cssFile}}">{% endfor %}
     <link rel="stylesheet" type="text/css" href="lib/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
     <!-- jQuery Links -->
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     
     <!-- HTML5 Shim -->
     <!--[if lt IE 9]>
@@ -65,19 +64,22 @@
         var user = {{user | json | safe}};
     </script>
 
+
     <!--Application JavaScript Files-->
     {% for jsFile in jsFiles %}
     <script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+    <script src="lib/jquery/dist/progress-bar.js" type="text/javascript" charset="utf-8" async="" defer=""></script>
+    <script src="lib/jquery/dist/demo-progress.js" type="text/javascript" charset="utf-8" async="" defer=""></script>
+
 
     {% if process.env.NODE_ENV === 'development' %}
     <!--Livereload script rendered -->
     <script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
     {% endif %}
-    
-    
+
 </body>
 
 </html>

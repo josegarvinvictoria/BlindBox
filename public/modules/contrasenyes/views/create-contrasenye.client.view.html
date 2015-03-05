@@ -3,29 +3,31 @@
         <h1>Crear una nova contrasenya:</h1>
     </div>
     <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+
+        <form name="form" class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
                 <div class="form-group col-md-3">
                     <label class="control-label" for="nomservei">Nom del servei:</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="nomservei" id="nomservei" class="form-control" placeholder="Facebook, Twitter, Google" required>
+                        <input name = "nomservei" type="text" data-ng-model="nomservei" id="nomservei" class="form-control" placeholder="Facebook, Twitter, Google" required>
                     </div>
-                    
+
                     <label class="control-label" for="url">URL:</label>
                     <div class="controls">
                         <input type="text" data-ng-model="url" id="url" class="form-control" placeholder="http://exemple.com" required>
                     </div>
-                    
+
                     <label class="control-label" for="nomusuari">Nom d'usuari:</label>
                     <div class="controls">
                         <input type="text" data-ng-model="nomusuari" id="nomusuari" class="form-control" placeholder="Nom d'usuari" required>
                     </div>
-                    
+
                     <label class="control-label" for="contrasenya">Contrasenya:</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="contrasenya" id="contrasenya" class="form-control" placeholder="Contrasenya" required>
-                    </div>
-                    
+                    <!--<div class="controls" id="password">
+                        <input type="password" data-ng-model="contrasenya" id="contrasenya" class="form-control" placeholder="Contrasenya" required>
+                    </div>-->
+                    <progress-bar></progress-bar>
+
                     <label class="control-label" for="observacions">Observacions:</label>
                     <div class="controls">
                         <input type="text" data-ng-model="observacions" id="observacions" class="form-control" placeholder="Observacions (Opcional)">
@@ -33,38 +35,48 @@
                     <br>
                     <input type="submit" class="btn btn-default">
                 </div>
+
                 <div class="col-md-offset-1 col-md-8">
-                <table class="table table-hover table-bordered">
+                    <table class="table table-hover table-bordered">
 
-                    <thead>
-                        <tr >
-                            <th>Nom Servei</th>
-                            <th>URL</th>
-                            <th>Usuari</th>
-                            <th>Contrasenya</th>
-                            <th>Observacions</th>
-                        </tr>
-                        <tr data-ng-repeat="contrasenye in contrasenyes">
-                           <td data-ng-bind="contrasenye.nomservei">{{contrasenye.nomservei}}</td>
-                           <td data-ng-bind="contrasenye.url">{{contrasenye.url}}</td>
-                           <td data-ng-bind="contrasenye.nomusuari">{{contrasenye.nomusuari}}</td>
-                           <td data-ng-bind="contrasenye.contrasenya">{{contrasenye.contrasenya}}</td>
-                           <td data-ng-bind="contrasenye.observacions">{{contrasenye.observacions}}</td>
-                        </tr>
-                    </thead>
+                        <thead>
+                            <tr>
+                                <th>Nom Servei</th>
+                                <th>URL</th>
+                                <th>Usuari</th>
+                                <th>Contrasenya</th>
+                                <th>Observacions</th>
+                            </tr>
+                            <tbody>
+                                <tr data-ng-repeat="contrasenye in contrasenyes">
+                                    <td data-ng-bind="contrasenye.nomservei"></td>
+                                    <td data-ng-bind="contrasenye.url"></td>
+                                    <td data-ng-bind="contrasenye.nomusuari"></td>
+                                    <td>
+                                        <input type="password" data-ng-model="contrasenye.contrasenya"></input>
+                                        <button ng-click="showPass($event)" class="btn btn-primary">Veu</button>
+                                    </td>
+                                    <td data-ng-bind="contrasenye.observacions"></td>
 
-                        <tbody>
+                                </tr>
+                        </thead>
+
+
 
                         </tbody>
 
-                </table>
+                    </table>
                 </div>
 
 
-				<div data-ng-show="error" class="text-danger">
-					<strong data-ng-bind="error"></strong>
-				</div>
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
             </fieldset>
         </form>
     </div>
+
+
 </section>
+
+
