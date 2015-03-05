@@ -5,28 +5,54 @@ angular.module('contrasenyes').controller('ContrasenyesController', ['$scope', '
 	function($scope, $stateParams, $location, Authentication, Contrasenyes) {
 		$scope.authentication = Authentication;
 
+        //Crear una contrasenya guardar-la a la base de dades
+        //i que es mostri directament a a la finestra
+        $scope.contrasenyes = [
+
+        ];
+
+        $scope.showPass = function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            console.log('1123')
+        };
 		// Create new Contrasenye
 		$scope.create = function() {
 			// Create new Contrasenye object
-			var contrasenye = new Contrasenyes ({
-				nomservei: this.nomservei,
+            if($scope.nomservei == null){
+                console.log("Esta buit");
+            }else{
+                $scope.contrasenyes.unshift ({
+				nomservei: $scope.nomservei,
+                url: $scope.url,
+                nomusuari: $scope.nomusuari,
+                contrasenya: $scope.contrasenya,
+                observacions: $scope.observacions
+			});
+
+
+
+            var prova = new Contrasenyes ({
+                nomservei: this.nomservei,
                 url: this.url,
                 nomusuari: this.nomusuari,
                 contrasenya: this.contrasenya,
-                observacions: this.observacions               
-			});
+                observacions: this.observacions
+            });
+
+
 
 			// Redirect after save
-			contrasenye.$save(function(response) {
-				$location.path('contrasenyes/' + response._id);
+			prova.$save(function(response) {
+				$location.path('contrasenyes/create');
 
 				// Clear form fields
 				$scope.name = '';
 			}, function(errorResponse) {
-				$scope.error = errorResponse.data.message;
+				//$scope.error = errorResponse.data.message;
 			});
 		};
-
+        }
 		// Remove existing Contrasenye
 		$scope.remove = function(contrasenye) {
 			if ( contrasenye ) { 
