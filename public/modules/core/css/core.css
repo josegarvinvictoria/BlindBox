@@ -1,15 +1,201 @@
 .content {
-	margin-top: 50px;
+    margin-top: 50px;
+    /* border: 2px solid red;*/
 }
+
 .undecorated-link:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-	display: none !important;
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
 }
+
 .ng-invalid.ng-dirty {
-	border-color: #FA787E;
+    border-color: #FA787E;
 }
+
 .ng-valid.ng-dirty {
-	border-color: #78FA89;
+    border-color: #78FA89;
+}
+/**css box shadow**/
+
+.box {
+    position: relative;
+    margin-top: 33px;
+    width: 1063px;
+    height: 572px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25), 0 0 50px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 0% 0% 1% 0% / 0% 0% 20% 0%;
+}
+
+.box:before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    width: 98%;
+    height: 96%;
+    bottom: 0px;
+    right: 0px;
+    background: #eee;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+    -webkit-transform: skew(2deg, 2deg) translate(3px, 8px);
+    -moz-transform: skew(2deg, 2deg) translate(3px, 8px);
+    -ms-transform: skew(2deg, 2deg) translate(3px, 8px);
+    -o-transform: skew(2deg, 2deg) translate(3px, 8px);
+    transform: skew(2deg, 2deg) translate(3px, 8px);
+}
+
+.box:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    width: 98%;
+    height: 96%;
+    bottom: 0px;
+    right: 0px;
+    background: #eee;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    -webkit-transform: skew(2deg, 2deg) translate(-1px, 2px);
+    -moz-transform: skew(2deg, 2deg) translate(-1px, 2px);
+    -ms-transform: skew(2deg, 2deg) translate(-1px, 2px);
+    -o-transform: skew(2deg, 2deg) translate(-1px, 2px);
+    transform: skew(2deg, 2deg) translate(-1px, 2px);
+}
+/**Shake effect **/
+/*============================================================================= */
+
+.outclass {
+    -webkit-animation: rotateCubeTopOut 0.75s both ease-in;
+}
+
+.inclass {
+    -webkit-animation: rotateCubeTopIn 0.75s both ease-in;
+    /*z-index: 8888;*/
+}
+
+.ng-enter {
+    -webkit-animation: rotateCubeTopIn 0.75s both ease-in;
+}
+
+.ng-leave {
+    -webkit-animation: rotateCubeTopOut 0.75s both ease-in;
+    /*-webkit-animation: rotateCubeTopOut 0.75s both ease-in;*/
+    /*/z-index: 9999;*/
+}
+/* ANIMATIONS
+============================================================================= */
+/* leaving animations ----------------------------------------- */
+/* rotate and fall */
+
+@-webkit-keyframes rotateCubeTopOut {
+    0% {}
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+    }
+    100% {
+        opacity: .3;
+        -webkit-transform: translateY(-100%) rotateX(90deg);
+    }
+}
+
+@keyframes rotateCubeTopOut {
+    0% {}
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+        transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+    }
+    100% {
+        opacity: .3;
+        -webkit-transform: translateY(-100%) rotateX(90deg);
+        transform: translateY(-100%) rotateX(90deg);
+    }
+}
+
+@-webkit-keyframes rotateCubeTopIn {
+    0% {
+        opacity: .3;
+        -webkit-transform: translateY(100%) rotateX(-90deg);
+    }
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+    }
+}
+
+@keyframes rotateCubeTopIn {
+    0% {
+        opacity: .3;
+        -webkit-transform: translateY(100%) rotateX(-90deg);
+        transform: translateY(100%) rotateX(-90deg);
+    }
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+        transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+    }
+}
+
+@-webkit-keyframes rotateCubeBottomOut {
+    0% {}
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+    }
+    100% {
+        opacity: .3;
+        -webkit-transform: translateY(100%) rotateX(-90deg);
+    }
+}
+
+@keyframes rotateCubeBottomOut {
+    0% {}
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+        transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+    }
+    100% {
+        opacity: .3;
+        -webkit-transform: translateY(100%) rotateX(-90deg);
+        transform: translateY(100%) rotateX(-90deg);
+    }
+}
+
+@-webkit-keyframes rotateCubeBottomIn {
+    0% {
+        opacity: .3;
+        -webkit-transform: translateY(-100%) rotateX(90deg);
+    }
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+    }
+}
+
+@keyframes rotateCubeBottomIn {
+    0% {
+        opacity: .3;
+        -webkit-transform: translateY(-100%) rotateX(90deg);
+        transform: translateY(-100%) rotateX(90deg);
+    }
+    50% {
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+        transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+    }
 }
