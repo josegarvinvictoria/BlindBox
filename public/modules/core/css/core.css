@@ -82,11 +82,11 @@
     /*z-index: 8888;*/
 }
 
-.ng-enter {
+ng-enter {
     -webkit-animation: rotateCubeTopIn 0.75s both ease-in;
 }
 
-.ng-leave {
+ng-leave {
     -webkit-animation: rotateCubeTopOut 0.75s both ease-in;
     /*-webkit-animation: rotateCubeTopOut 0.75s both ease-in;*/
     /*/z-index: 9999;*/
