@@ -4,41 +4,47 @@
     </div>
     <div class="col-md-12">
 
-        <form name="form" class="form-horizontal" data-ng-submit="create()" novalidate>
+        <form name="passForm" class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
                 <div class="form-group col-md-3">
                     <label class="control-label" for="nomservei">Nom del servei:</label>
                     <div class="controls">
-                        <input name = "nomservei" type="text" data-ng-model="nomservei" id="nomservei" class="form-control" placeholder="Facebook, Twitter, Google" required>
+                        <input name="nomservei" type="text" data-ng-model="nomservei" id="nomservei" class="form-control" placeholder="Facebook, Twitter, Google" required>
+                        <p ng-show="passForm.nomservei.$invalid && !passForm.nomservei.$pristine" class="help-block"><strong class="text-danger">El nom es obligatori.</strong>
+                        </p>
+                        <!--si el camp es invalid i a mes no esta net mostra error-->
                     </div>
 
                     <label class="control-label" for="url">URL:</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="url" id="url" class="form-control" placeholder="http://exemple.com" required>
+                        <input name="url" type="text" data-ng-model="url" id="url" class="form-control" placeholder="http://www.exemple.com" required>
+                        <p ng-show="passForm.url.$invalid && !passForm.url.$pristine" class="help-block text-danger"><strong class="text-danger">la url es obligatoria.</strong>
+                        </p>
                     </div>
-
-                    <label class="control-label" for="nomusuari">Nom d'usuari:</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="nomusuari" id="nomusuari" class="form-control" placeholder="Nom d'usuari" required>
-                    </div>
-
-                    <label class="control-label" for="contrasenya">Contrasenya:</label>
-                    <!--<div class="controls" id="password">
-                        <input type="password" data-ng-model="contrasenya" id="contrasenya" class="form-control" placeholder="Contrasenya" required>
-                    </div>-->
-                    <progress-bar></progress-bar>
-
                     <label class="control-label" for="observacions">Observacions:</label>
                     <div class="controls">
                         <input type="text" data-ng-model="observacions" id="observacions" class="form-control" placeholder="Observacions (Opcional)">
                     </div>
-                    <br>
-                    <input type="submit" class="btn btn-default">
+
+                    <label class="control-label" for="nomusuari">Nom d'usuari:</label>
+                    <div class="controls">
+                        <input name="nomu" type="text" data-ng-model="nomusuari" id="nomusuari" class="form-control" placeholder="Nom d'usuari" required>
+                        <p ng-show="passForm.nomu.$invalid && !passForm.nomu.$pristine" class="help-block">
+                            <strong class="text-danger">El nom d'usuari es obligatori.</strong>
+                        </p>
+                    </div>
+
+                    <label class="control-label" for="contrasenya">Contrasenya:</label>
+
+                    <progress-bar></progress-bar>
+
+
+
+                    <input type="submit" class="btn btn-default" ng-disabled="passForm.$invalid">
                 </div>
 
                 <div class="col-md-offset-1 col-md-8">
                     <table class="table table-hover table-bordered">
-
                         <thead>
                             <tr>
                                 <th>Nom Servei</th>
@@ -61,8 +67,6 @@
                                 </tr>
                         </thead>
 
-
-
                         </tbody>
 
                     </table>
@@ -78,5 +82,3 @@
 
 
 </section>
-
-

@@ -7,6 +7,11 @@
     text-decoration: none;
 }
 
+.imatge {
+   width: 80px;
+    height: 80px;
+}
+
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],
@@ -23,6 +28,7 @@
 .ng-valid.ng-dirty {
     border-color: #78FA89;
 }
+
 /**css box shadow**/
 
 .box {
@@ -82,7 +88,7 @@
     /*z-index: 8888;*/
 }
 
-ng-enter {
+/*ng-enter {
     -webkit-animation: rotateCubeTopIn 0.75s both ease-in;
 }
 
@@ -90,7 +96,7 @@ ng-leave {
     -webkit-animation: rotateCubeTopOut 0.75s both ease-in;
     /*-webkit-animation: rotateCubeTopOut 0.75s both ease-in;*/
     /*/z-index: 9999;*/
-}
+}*/
 /* ANIMATIONS
 ============================================================================= */
 /* leaving animations ----------------------------------------- */
