@@ -14,7 +14,7 @@ angular.module('core').directive('sliderIndex', [
                     slidesToShow: 3,
                     slidesToScroll: 1,
                     autoplay: true,
-                    autoplaySpeed: 100
+                    autoplaySpeed: 4000
                     //centerMode: true,
                     //centerPadding: '100px',
                     //dots: true
