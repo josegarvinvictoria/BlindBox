@@ -59,7 +59,7 @@
 	<![endif]-->
 </head>
 
-<body class="ng-cloak">
+<body class="ng-cloak" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     
    <div ng-controller="TopController">   
     <div id="wrapper" data-ng-show="authentication.user.displayName" data-ng-include="'/modules/core/views/header.client.admin.view.html'"></div>
@@ -67,12 +67,12 @@
     <div id="wrapper" data-ng-if="authentication.user==''" data-ng-include="'/modules/core/views/header.client.view.html'"></div>
     
 </div>  
-    </header>
+    
     <section class="content">
-        <section class="container">
+     
 
             {% block content %}{% endblock %}
-        </section>
+        
     </section>
 
 
@@ -86,8 +86,9 @@
     {% for jsFile in jsFiles %}
     <script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
+    <script type="text/javascript" src="lib/grayscale/jquery.easing.min.js"></script>
     <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+    <script type="text/javascript" src="lib/grayscale/grayscale.js"></script>
     <script src="lib/jquery/dist/progress-bar.js" type="text/javascript" charset="utf-8" async="" defer=""></script>
     <script src="lib/jquery/dist/demo-progress.js" type="text/javascript" charset="utf-8" async="" defer=""></script>
 
