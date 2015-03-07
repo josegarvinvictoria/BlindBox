@@ -1,20 +1,20 @@
-<section class="row" ng-class="" data-ng-controller="AuthenticationController">
+<section class="row" ng-class="{{pageClass}}" data-ng-controller="AuthenticationController">
 	<h3 class="col-md-12 text-center">Registra't a través d'una xarxa social</h3>
 	<div class="col-md-12 text-center">
 		<a href="/auth/facebook" class="undecorated-link">
-			<img src="/modules/users/img/buttons/facebook.png">
+			<img src="/modules/users/img/buttons/facebook.png" class="imatge">
 		</a>
-		<a href="/auth/twitter" class="undecorated-link">
-			<img src="/modules/users/img/buttons/twitter.png">
+		<a href="/auth/twitter" class="undecorated-link" >
+			<img src="/modules/users/img/buttons/twitter.png" class="imatge">
 		</a>
-		<a href="/auth/google" class="undecorated-link">
-			<img src="/modules/users/img/buttons/google.png">
+		<a href="/auth/google" class="undecorated-link ">
+			<img src="/modules/users/img/buttons/google.png" class="imatge">
 		</a>
-		<a href="/auth/linkedin" class="undecorated-link">
-			<img src="/modules/users/img/buttons/linkedin.png">
+		<a href="/auth/linkedin" class="undecorated-link ">
+			<img src="/modules/users/img/buttons/linkedin.png" class="imatge">
 		</a>
-		<a href="/auth/github" class="undecorated-link">
-			<img src="/modules/users/img/buttons/github.png">
+		<a href="/auth/github" class="undecorated-link ">
+			<img src="/modules/users/img/buttons/github.png" class="imatge">
 		</a>
 	</div>
 	<h3 class="col-md-12 text-center">O crea un compte a partir del teu email</h3>
@@ -42,7 +42,7 @@
 					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
 				</div>
 				<div class="text-center form-group">
-					<button type="submit" class="btn btn-large btn-primary">Registra'm</button>&nbsp; or&nbsp;
+					<button type="submit" class="btn btn-large btn-primary">Registra'm</button>&nbsp; o&nbsp;
 					<a href="/#!/signin" class="show-signup">Accedir</a>
 				</div>
 				<div data-ng-show="error" class="text-center text-danger">

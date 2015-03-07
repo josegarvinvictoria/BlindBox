@@ -1,5 +1,6 @@
-<section data-ng-controller="HomeController">
-    <div class="jumbotron text-center">
+<section data-ng-controller="HomeController" >
+   
+    <div class="jumbotron text-center" data-ng-if="authentication.user==''">
     
     <slider-index></slider-index>
         <!--<div class="row">
@@ -19,7 +20,7 @@
             </p>
         </div>
     </div>
-    <div>
+    <div  data-ng-if="authentication.user==''">
         <h2>Congrats! You've configured and run the sample application.</h2>
         <p>MEAN.JS is a web application boilerplate, which means you should start changing everything :-)</p>
         <p>This sample application tracks users and articles.</p>
@@ -45,7 +46,7 @@
             </li>
         </ul>
     </div>
-    <div class="row">
+    <div class="row"  data-ng-if="authentication.user==''">
         <div class="col-md-3">
             <h2>
 				<strong>M</strong>ongoDB
@@ -71,7 +72,7 @@
             <p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a web server. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
         </div>
     </div>
-    <div class="well">
+    <div class="well"  data-ng-if="authentication.user==''">
         <h2>MEAN.JS Documentation</h2>
         <p>
             Once you're familiar with the foundation technology, check out the MEAN.JS Documentation:
@@ -91,9 +92,7 @@
             </ul>
         </p>
     </div>
-    <br>Enjoy &amp; Keep Us Updated,
-    <br>The MEAN.JS Team.
-    
+   
     
     
 </section>

@@ -39,15 +39,20 @@
     <link rel="stylesheet" href="{{cssFile}}">{% endfor %}
     <link rel="stylesheet" type="text/css" href="lib/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css" />
-<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="lib/animateCss/animate.css" />
-=======
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
->>>>>>> bde68b3587febc2e7af0806cff262d03496f08fa
+    <link rel="stylesheet" type="text/css" href="lib/animateCss/page-trans.css" />
+    <link rel="stylesheet" type="text/css" href="lib/SBAdmin/sb-admin-2.css" />
+    <link rel="stylesheet" type="text/css" href="lib/SBAdmin/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/SBAdmin/metisMenu.min.css" />
+    <script type="text/javascript" src="lib/SBAdmin/metisMenu.min.js"></script>
+
+
+
+
 
     <!-- jQuery Links -->
-    
+
     <!-- HTML5 Shim -->
     <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -55,16 +60,23 @@
 </head>
 
 <body class="ng-cloak">
-    <header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+    
+   <div ng-controller="TopController">   
+    <div id="wrapper" data-ng-show="authentication.user.displayName" data-ng-include="'/modules/core/views/header.client.admin.view.html'"></div>
+    
+    <div id="wrapper" data-ng-if="authentication.user==''" data-ng-include="'/modules/core/views/header.client.view.html'"></div>
+    
+</div>  
+    </header>
     <section class="content">
         <section class="container">
-           
+
             {% block content %}{% endblock %}
         </section>
     </section>
 
 
-    <!--Embedding The User Object-->
+      <!--Embedding The User Object-->
     <script type="text/javascript">
         var user = {{user | json | safe}};
     </script>
@@ -74,7 +86,7 @@
     {% for jsFile in jsFiles %}
     <script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
     <script type="text/javascript" src="lib/slick/slick.min.js"></script>
     <script src="lib/jquery/dist/progress-bar.js" type="text/javascript" charset="utf-8" async="" defer=""></script>
     <script src="lib/jquery/dist/demo-progress.js" type="text/javascript" charset="utf-8" async="" defer=""></script>
@@ -88,4 +100,3 @@
 </body>
 
 </html>
-

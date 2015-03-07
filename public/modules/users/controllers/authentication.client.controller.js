@@ -6,6 +6,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
             in : true,
             out : false
         };
+        $scope.pageClass = 'page-signup';
         $scope.authentication = Authentication;
 
 

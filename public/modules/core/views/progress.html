@@ -1,7 +1,10 @@
 <div id="complexify">
     <div classs="form">
         <div style="margin-bottom: 15px;">
-            <input type="password"  data-ng-model="contrasenya" class="form-control" id="password" placeholder="Contrasenya"required>
+            <input name ="pw" type="password"  data-ng-model="contrasenya" class="form-control" id="password" placeholder="Contrasenya"required>
+            <p ng-show="passForm.pw.$invalid && !passForm.pw.$pristine" 
+                           class="help-block"><strong class="text-danger">La contrasenya es obligatoria.</strong></p>
+            
         </div>
     </div>
     <div class="progress">
