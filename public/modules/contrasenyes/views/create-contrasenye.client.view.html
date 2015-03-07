@@ -1,84 +1,101 @@
-<section data-ng-controller="ContrasenyesController" data-ng-init="find()">
-    <div class="page-header">
-        <h1>Crear una nova contrasenya:</h1>
+
+<div id="page-wrapper" style="min-height: 151px;">
+    <!--<div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Dashboard</h1>
+        </div>
+        <!-- /.col-lg-12
+    </div>-->
+
+
+        <!-- /.col-lg-8 -->
+        <div class="row">
+        <div class="col-md-12">
+          <section data-ng-controller="ContrasenyesController" data-ng-init="find()">
+              <div class="page-header">
+                  <h1>Crear una nova contrasenya:</h1>
+              </div>
+              <div class="col-md-12">
+
+                  <form name="passForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+                      <fieldset>
+                          <div class="form-group col-md-3">
+                              <label class="control-label" for="nomservei">Nom del servei:</label>
+                              <div class="controls">
+                                  <input name="nomservei" type="text" data-ng-model="nomservei" id="nomservei" class="form-control" placeholder="Facebook, Twitter, Google" required>
+                                  <p ng-show="passForm.nomservei.$invalid && !passForm.nomservei.$pristine" class="help-block"><strong class="text-danger">El nom es obligatori.</strong>
+                                  </p>
+                                  <!--si el camp es invalid i a mes no esta net mostra error-->
+                              </div>
+
+                              <label class="control-label" for="url">URL:</label>
+                              <div class="controls">
+                                  <input name="url" type="text" data-ng-model="url" id="url" class="form-control" placeholder="http://www.exemple.com" required>
+                                  <p ng-show="passForm.url.$invalid && !passForm.url.$pristine" class="help-block text-danger"><strong class="text-danger">la url es obligatoria.</strong>
+                                  </p>
+                              </div>
+                              <label class="control-label" for="observacions">Observacions:</label>
+                              <div class="controls">
+                                  <input type="text" data-ng-model="observacions" id="observacions" class="form-control" placeholder="Observacions (Opcional)">
+                              </div>
+
+                              <label class="control-label" for="nomusuari">Nom d'usuari:</label>
+                              <div class="controls">
+                                  <input name="nomu" type="text" data-ng-model="nomusuari" id="nomusuari" class="form-control" placeholder="Nom d'usuari" required>
+                                  <p ng-show="passForm.nomu.$invalid && !passForm.nomu.$pristine" class="help-block">
+                                      <strong class="text-danger">El nom d'usuari es obligatori.</strong>
+                                  </p>
+                              </div>
+
+                              <label class="control-label" for="contrasenya">Contrasenya:</label>
+
+                              <progress-bar></progress-bar>
+
+
+
+                              <input type="submit" class="btn btn-default" ng-disabled="passForm.$invalid">
+                          </div>
+
+                          <div class="col-md-7 col-md-offset-1">
+                              <table class="table table-hover table-bordered">
+                                  <thead>
+                                      <tr>
+                                          <th>Nom Servei</th>
+                                          <th>URL</th>
+                                          <th>Usuari</th>
+                                          <th>Contrasenya</th>
+                                          <th>Observacions</th>
+                                      </tr>
+                                      <tbody>
+                                          <tr data-ng-repeat="contrasenye in contrasenyes">
+                                              <td data-ng-bind="contrasenye.nomservei"></td>
+                                              <td data-ng-bind="contrasenye.url"></td>
+                                              <td data-ng-bind="contrasenye.nomusuari"></td>
+                                              <td>
+                                                  <input type="password" data-ng-model="contrasenye.contrasenya"></input>
+                                                  <button ng-click="showPass($event)" class="btn btn-primary">Veu</button>
+                                              </td>
+                                              <td data-ng-bind="contrasenye.observacions"></td>
+
+                                          </tr>
+                                  </thead>
+
+                                  </tbody>
+
+                              </table>
+                          </div>
+
+
+                          <div data-ng-show="error" class="text-danger">
+                              <strong data-ng-bind="error"></strong>
+                          </div>
+                      </fieldset>
+                  </form>
+              </div>
+
+
+          </section>
+        <!-- /.col-lg-4 -->
     </div>
-    <div class="col-md-12">
-
-        <form name="passForm" class="form-horizontal" data-ng-submit="create()" novalidate>
-            <fieldset>
-                <div class="form-group col-md-3">
-                    <label class="control-label" for="nomservei">Nom del servei:</label>
-                    <div class="controls">
-                        <input name="nomservei" type="text" data-ng-model="nomservei" id="nomservei" class="form-control" placeholder="Facebook, Twitter, Google" required>
-                        <p ng-show="passForm.nomservei.$invalid && !passForm.nomservei.$pristine" class="help-block"><strong class="text-danger">El nom es obligatori.</strong>
-                        </p>
-                        <!--si el camp es invalid i a mes no esta net mostra error-->
-                    </div>
-
-                    <label class="control-label" for="url">URL:</label>
-                    <div class="controls">
-                        <input name="url" type="text" data-ng-model="url" id="url" class="form-control" placeholder="http://www.exemple.com" required>
-                        <p ng-show="passForm.url.$invalid && !passForm.url.$pristine" class="help-block text-danger"><strong class="text-danger">la url es obligatoria.</strong>
-                        </p>
-                    </div>
-                    <label class="control-label" for="observacions">Observacions:</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="observacions" id="observacions" class="form-control" placeholder="Observacions (Opcional)">
-                    </div>
-
-                    <label class="control-label" for="nomusuari">Nom d'usuari:</label>
-                    <div class="controls">
-                        <input name="nomu" type="text" data-ng-model="nomusuari" id="nomusuari" class="form-control" placeholder="Nom d'usuari" required>
-                        <p ng-show="passForm.nomu.$invalid && !passForm.nomu.$pristine" class="help-block">
-                            <strong class="text-danger">El nom d'usuari es obligatori.</strong>
-                        </p>
-                    </div>
-
-                    <label class="control-label" for="contrasenya">Contrasenya:</label>
-
-                    <progress-bar></progress-bar>
-
-
-                    
-                    <input type="submit" class="btn btn-default" ng-disabled="passForm.$invalid">
-                </div>
-
-                <div class="col-md-7 col-md-offset-1">
-                    <table class="table table-hover table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Nom Servei</th>
-                                <th>URL</th>
-                                <th>Usuari</th>
-                                <th>Contrasenya</th>
-                                <th>Observacions</th>
-                            </tr>
-                            <tbody>
-                                <tr data-ng-repeat="contrasenye in contrasenyes">
-                                    <td data-ng-bind="contrasenye.nomservei"></td>
-                                    <td data-ng-bind="contrasenye.url"></td>
-                                    <td data-ng-bind="contrasenye.nomusuari"></td>
-                                    <td>
-                                        <input type="password" data-ng-model="contrasenye.contrasenya"></input>
-                                        <button ng-click="showPass($event)" class="btn btn-primary">Veu</button>
-                                    </td>
-                                    <td data-ng-bind="contrasenye.observacions"></td>
-
-                                </tr>
-                        </thead>
-
-                        </tbody>
-
-                    </table>
-                </div>
-
-
-                <div data-ng-show="error" class="text-danger">
-                    <strong data-ng-bind="error"></strong>
-                </div>
-            </fieldset>
-        </form>
-    </div>
-
-
-</section>
+    <!-- /.row -->
+</div>
