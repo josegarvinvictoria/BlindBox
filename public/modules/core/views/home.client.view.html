@@ -1,10 +1,12 @@
-<header class="intro" >
+<section id="intro" data-ng-controller="HomeController">
+    <header class="intro" data-ng-if="authentication.user==''">
         <div class="intro-body">
             <div class="container">
-                <div class="row introduction" >
+                <div class="row introduction">
                     <div class="col-md-8 col-md-offset-2 introduction-content">
                         <h1 class="brand-heading">BLINDBOX</h1>
-                        <p class="intro-text">A free, responsive, one page Bootstrap theme.<br>Created by Start Bootstrap.</p>
+                        <p class="intro-text">A free, responsive, one page Bootstrap theme.
+                            <br>Created by Start Bootstrap.</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -13,14 +15,14 @@
             </div>
         </div>
     </header>
-    
-    
-    
-  <section id="about" data-ng-controller="HomeController" >
-   
+
+</section>
+
+<section id="about" data-ng-controller="HomeController">
+
     <div class="jumbotron text-center" data-ng-if="authentication.user==''">
-    
-    <slider-index></slider-index>
+
+        <slider-index></slider-index>
         <!--<div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
                 <img alt="MEAN.JS" class="img-responsive center-block" src="modules/core/img/brand/logo.png" />
@@ -38,20 +40,18 @@
             </p>
         </div>
     </div>
-    <div  data-ng-if="authentication.user==''">
+    <div data-ng-if="authentication.user==''">
         <h2>Congrats! You've configured and run the sample application.</h2>
         <p>MEAN.JS is a web application boilerplate, which means you should start changing everything :-)</p>
         <p>This sample application tracks users and articles.</p>
         <ul>
             <li>
                 Click
-                <em>Signup</em>
-                to get started.
+                <em>Signup</em> to get started.
             </li>
             <li>
                 Configure your app to work with your social accounts, by editing the
-                <em>/config/env/*.js</em>
-                files.
+                <em>/config/env/*.js</em> files.
             </li>
             <li>
                 Edit your users module.
@@ -64,7 +64,7 @@
             </li>
         </ul>
     </div>
-    <div class="row"  data-ng-if="authentication.user==''">
+    <div class="row" data-ng-if="authentication.user==''">
         <div class="col-md-3">
             <h2>
 				<strong>M</strong>ongoDB
@@ -90,7 +90,7 @@
             <p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a web server. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
         </div>
     </div>
-    <div class="well"  data-ng-if="authentication.user==''">
+    <div class="well" data-ng-if="authentication.user==''">
         <h2>MEAN.JS Documentation</h2>
         <p>
             Once you're familiar with the foundation technology, check out the MEAN.JS Documentation:
@@ -110,10 +110,10 @@
             </ul>
         </p>
     </div>
-   
-    
-    
+
+<footer class="text-center">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Llicència de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">BlindBox</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="www.blindbox.cat" property="cc:attributionName" rel="cc:attributionURL">BlindBox Corporation</a> està subjecta a una llicència de <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Reconeixement-NoComercial-SenseObraDerivada 4.0 Internacional de Creative Commons</a><br />Creat a partir d'una obra disponible a <a xmlns:dct="http://purl.org/dc/terms/" href="www.blindbox.cat" rel="dct:source">www.blindbox.cat</a>
+</footer>
+
+
 </section>
-
-
-
